@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "30.0.0"
+
+    defaultConfig {
+        applicationId "com.example.covid_19pop_up"
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'androidx.cardview:cardview:1.0.0'//card view
+
+    implementation 'com.github.blackfizz:eazegraph:1.2.5l@aar'
+//EazeGraph(pie charts)  https://github.com/blackfizz/EazeGraph
+    implementation 'com.nineoldandroids:library:2.4.0'
+
+    implementation 'com.android.volley:volley:1.2.1'
+    //volley library  https://developer.android.com/training/volley
+
+    implementation 'com.leo.simplearcloader:simplearcloader:1.0.+'
+    //loading animation   https://github.com/generic-leo/SimpleArcLoader
+
+    implementation 'com.github.bumptech.glide:glide:4.12.0' //api image loader
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+}
